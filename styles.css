@@ -1,0 +1,361 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+body{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 100%;
+}
+
+
+.main--section{
+    width: 100%;
+    height: 100vh;
+}
+
+/* ----------VERSION EN INGLES---------- */
+
+.lang--btn{
+    position: absolute;
+    right: 0;
+    color: rgb(197, 168, 128);
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.lang--text{
+    font-size: 1.1rem;
+}
+
+.lang--btn::before{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(197, 168, 128);
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin:bottom right;
+    transition: transform 0.6s ease-out;
+}
+
+.lang--btn:hover::before{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* ----------IMAGEN Y BORDE DE IMAGEN---------- */
+
+.main--container{
+    height: 800px;
+    width: 650px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img--border{
+    width: 100%;
+    height: 85%;
+    position: absolute;
+    top: 70px;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+/* ----------NOMBRE, APELLIDO Y DESCRIPCION SOBRE IMAGEN PRINCIPAL---------- */
+
+.info--container{
+    width: 350px;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+}
+
+.name--container{
+    background-color: rgb(197, 168, 128);
+    position: inherit;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+}
+
+.lastName--container{
+    background-color: rgb(197, 168, 128);
+    position: inherit;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+}
+
+.name--container_name{
+    position: relative;
+    top: -30px;
+    letter-spacing: 10px;
+    color:rgb(83, 46, 28);
+    font-weight: 600;
+}
+
+.description--container{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    background-color:rgb(197, 168, 128) ;
+}
+
+.description--container_content{
+    color: rgb(83, 46, 28);
+    font-size: 2rem;
+    padding-bottom: 5px;
+}
+
+
+/* ----------ENLACES QUE RODEAN A LA IMAGEN PRINCIPAL---------- */
+
+
+/* CONTACTO */
+
+
+.contact--link{
+    position: absolute;
+    z-index: 1;
+    text-decoration: none;
+    left: -37px;
+    top: 37%;
+    overflow: hidden;
+}
+
+.link--text{
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    letter-spacing: -10px;
+    font-size: 1.5rem;
+    margin-top: -5px;
+    padding-bottom: 7px;
+    color: rgb(197, 168, 128);
+    transition: all ease .5s;
+}
+
+.link--text_active{
+    display: none;
+}
+
+.contact--link::after{
+  background-color: rgb(197, 168, 128);
+  opacity: 0;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  bottom: 50px;
+  right: 50px;
+  transition: all ease .5s;
+  content: "";
+}
+
+.link--text:hover{
+    color: rgb(83, 46, 28);
+}
+
+.contact--link:hover::after{
+    bottom: 0px;
+    right: 0px;
+    opacity: 100;
+}
+
+
+/* REDES SOCIALES */
+
+
+.network--btn{
+    position: absolute;
+    z-index: 1;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgb(197, 168, 128);
+    left: 49%;
+    top: 6.5%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.network--text{
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    padding-left: 5px;
+    transition: all ease 1s;
+}
+
+.network--text.active{
+    position: relative;
+    transform: translateX(250px);
+}
+
+.network--text:hover{
+    color: rgb(83, 46, 28);
+}
+
+.network--btn::after{
+    background-color: rgb(197, 168, 128);
+    opacity: 0;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    bottom: 50px;
+    right: 50px;
+    transition: all ease .5s;
+    content: "";
+}
+
+.network--btn:hover::after{
+    bottom: 0px;
+    right: 0px;
+    opacity: 100;
+}
+
+
+/* ICONOS REDES SOCIALES */
+
+
+.icons--container{
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.7rem;
+    transition: all ease 1.5s;
+}
+
+.icons--container.active{
+    top: 18px;
+}
+
+i{
+    color: white;
+    transition: all ease .3s;
+}
+
+i:hover{
+    color: rgb(83, 46, 28) ;
+}
+
+
+/* PROYECTOS */
+
+
+.project--link{
+    position: absolute;
+    z-index: 1;
+    text-decoration: none;
+    right: -37px;
+    top: 37%;
+    overflow: hidden;
+}
+
+.project--text{
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    letter-spacing: -10px;
+    font-size: 1.5rem;
+    margin-top: -5px;
+    padding-bottom: 7px;
+    color: rgb(197, 168, 128);
+    transition: all ease .5s;
+}
+
+.project--link::after{
+    background-color: rgb(197, 168, 128);
+    opacity: 0;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    bottom: 50px;
+    left: 50px;
+    transition: all ease .5s;
+    content: "";
+  }
+
+.project--text:hover{
+    color: rgb(83, 46, 28);
+}
+
+.project--link:hover::after{
+    bottom: 0px;
+    left: 0px;
+    opacity: 100;
+}
+
+
+/* SOBRE MI */
+
+
+.about--link{
+    position: absolute;
+    z-index: 1;
+    text-decoration: none;
+    left: 40%;
+    bottom:14px;
+    overflow: hidden;
+}
+
+.about--text{
+    letter-spacing: 5px;
+    font-size: 1.5rem;
+    margin-top: -5px;
+    color: rgb(197, 168, 128);
+    transition: all ease .5s;
+    padding-top: 4px;
+    padding-left: 4px;
+}
+
+.about--link::after{
+    background-color: rgb(197, 168, 128);
+    opacity: 0;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 50px;
+    left: 50px;
+    transition: all ease .5s;
+    content: "";
+}
+
+.about--link:hover::after{
+    top: 0px;
+    left: 0px;
+    opacity: 100;
+}
+
+.about--text:hover{
+    color: rgb(83, 46, 28);
+}
+
